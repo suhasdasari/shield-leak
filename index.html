@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Shield Leak: what a confidential token balance still shows</title>
+<meta name="description" content="Check what a public observer can infer from Fhenix confidential token activity on Ethereum and Arbitrum: shields, unshield claims, counterparties and timing.">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>Shield Leak</h1>
+    <p class="tag">Fhenix confidential tokens encrypt balances and transfer amounts. Shield amounts, claim amounts, counterparties and timing stay public. Paste an address or transaction to see what anyone can read from it.</p>
+  </div>
+</header>
+<main class="wrap">
+  <section id="notice" class="notice"></section>
+
+  <section id="headline" class="stats"></section>
+
+  <section class="card">
+    <h2>Check an address or transaction</h2>
+    <form id="check">
+      <input id="q" placeholder="0x… address (40 hex) or tx hash (64 hex)" autocomplete="off" spellcheck="false">
+      <button type="submit">Check</button>
+    </form>
+    <p class="muted small">No wallet connection. Lookups run in your browser against the indexed snapshot below; nothing is sent anywhere.</p>
+    <div id="result"></div>
+  </section>
+
+  <section class="card">
+    <h2>Token board</h2>
+    <p class="muted small">Every contract found emitting <code>ConfidentialTransfer</code> whose <code>name()</code> starts with "Fhenix". Amounts are in token units (6-decimal confidential precision). "Crowd" is the number of distinct addresses that ever shielded on that token, which is the most anyone can blend into.</p>
+    <div class="scroll"><table id="board"></table></div>
+  </section>
+
+  <section class="card">
+    <h2>Link finder</h2>
+    <p class="muted small">Claims (public unshield payouts) whose exact amount matches a shield made earlier on the same token. If only one address ever shielded that amount, the claim is flagged as a unique-amount match. Same-address round trips are shown separately. These are heuristics, not proof of ownership.</p>
+    <div id="links"></div>
+  </section>
+
+  <section class="card">
+    <h2>Before you unshield</h2>
+    <p class="muted small">Amounts already seen on each token. Exiting with an amount several others have used, and not right after your own shield, makes a claim harder to tie to one deposit. With crowds this small, no amount blends in well yet.</p>
+    <div id="exit"></div>
+  </section>
+
+  <section class="card">
+    <h2>What is public, per Fhenix docs</h2>
+    <ul>
+      <li><b>Shield:</b> the amount is in call data and in the underlying token's <code>Transfer</code> into the wrapper.</li>
+      <li><b>Unshield + claim:</b> the burned amount is made publicly decryptable and the claim event carries the decrypted amount.</li>
+      <li><b>Confidential transfer:</b> sender, receiver and time are visible; the amount is encrypted.</li>
+    </ul>
+    <p class="small">Sources: <a href="https://cofhe-docs.fhenix.zone/fhe-library/confidential-contracts/dual-mode/shield-unshield">Shield and unshield</a>, <a href="https://cofhe-docs.fhenix.zone/fhe-library/confidential-contracts/dual-mode/best-practices">best practices</a>, <a href="https://cofhe-docs.fhenix.zone/cofhe/fhe-library/confidential-contracts/fherc20/fherc20-wrapper">FHERC20 wrapper</a>.</p>
+  </section>
+
+  <section class="card">
+    <h2>Method and data gaps</h2>
+    <div id="method"></div>
+    <p>Spotted a wrong token, a missed contract or a bad number? <a href="https://github.com/suhasdasari/shield-leak/issues">Claim or correct it on GitHub Issues</a>.</p>
+  </section>
+
+  <p class="nfa"><b>Not financial advice.</b> Shield Leak is an aggregate measurement and self-check tool. It does not label addresses with identities and makes no claim about who controls any address.</p>
+</main>
+<footer>
+  <div class="wrap">Built by <a href="https://x.com/SatoshiDropsHQ">Satoshi Drops 🪂 @SatoshiDropsHQ</a></div>
+</footer>
+<script src="assets/app.js"></script>
+</body>
+</html>
