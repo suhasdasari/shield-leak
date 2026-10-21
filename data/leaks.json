@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-21T22:10:39Z",
+ "generated_at": "2026-10-21T22:19:16Z",
  "chains": {
   "ethereum": {
    "chain_id": 1,
@@ -10,8 +10,8 @@
   },
   "arbitrum": {
    "chain_id": 42161,
-   "head_block": 517043911,
-   "head_time": 1792620964,
+   "head_block": 517045660,
+   "head_time": 1792621470,
    "scan_from_block": 512000000,
    "explorer": "https://arbiscan.io"
   }
@@ -3603,5 +3603,8 @@
    "symbol": "carmcWBTC",
    "events": 0
   }
+ ],
+ "stale_chains": [
+  "ethereum"
  ]
 }
