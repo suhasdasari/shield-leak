@@ -11,13 +11,16 @@ concurrency:
 jobs:
   refresh:
     runs-on: ubuntu-latest
-    timeout-minutes: 40
+    timeout-minutes: 35
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
       - name: Run refresh
+        timeout-minutes: 30
+        env:
+          REFRESH_BUDGET_S: "1500"
         run: python scripts/refresh.py
       - name: Commit updated data
         run: |
