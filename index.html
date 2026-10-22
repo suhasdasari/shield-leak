@@ -3,15 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
 <title>Shield Leak: what a confidential token balance still shows</title>
-<meta name="description" content="Check what a public observer can infer from Fhenix confidential token activity on Ethereum and Arbitrum: shields, unshield claims, counterparties and timing.">
+<meta name="description" content="Check what a public observer can infer from Fhenix confidential token activity on Ethereum and Arbitrum: shields, unshield payouts, counterparties and timing.">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+<p class="disclaimer" style="background:#fff4d6;border:1px solid #e0b84c;padding:8px 12px;margin:0;font-size:14px">Independent open-source analysis tool, not affiliated with Fhenix. No wallet connection; it never asks for keys, seed phrases or signatures.</p>
 <header>
   <div class="wrap">
     <h1>Shield Leak</h1>
-    <p class="tag">Fhenix confidential tokens encrypt balances and transfer amounts. Shield amounts, claim amounts, counterparties and timing stay public. Paste an address or transaction to see what anyone can read from it.</p>
+    <p class="tag">Fhenix confidential tokens encrypt balances and transfer amounts. Shield amounts, payout amounts, counterparties and timing stay public. Paste an address or transaction to see what anyone can read from it.</p>
   </div>
 </header>
 <main class="wrap">
@@ -37,13 +39,13 @@
 
   <section class="card">
     <h2>Link finder</h2>
-    <p class="muted small">Claims (public unshield payouts) whose exact amount matches a shield made earlier on the same token. If only one address ever shielded that amount, the claim is flagged as a unique-amount match. Same-address round trips are shown separately. These are heuristics, not proof of ownership.</p>
+    <p class="muted small">Payouts (public unshield events) whose exact amount matches a shield made earlier on the same token. If only one address ever shielded that amount, the payout is flagged as a unique-amount match. Same-address round trips are shown separately. These are heuristics, not proof of ownership.</p>
     <div id="links"></div>
   </section>
 
   <section class="card">
     <h2>Before you unshield</h2>
-    <p class="muted small">Amounts already seen on each token. Exiting with an amount several others have used, and not right after your own shield, makes a claim harder to tie to one deposit. With crowds this small, no amount blends in well yet.</p>
+    <p class="muted small">Amounts already seen on each token. Exiting with an amount several others have used, and not right after your own shield, makes a payout harder to tie to one deposit. With crowds this small, no amount blends in well yet.</p>
     <div id="exit"></div>
   </section>
 
@@ -51,7 +53,7 @@
     <h2>What is public, per Fhenix docs</h2>
     <ul>
       <li><b>Shield:</b> the amount is in call data and in the underlying token's <code>Transfer</code> into the wrapper.</li>
-      <li><b>Unshield + claim:</b> the burned amount is made publicly decryptable and the claim event carries the decrypted amount.</li>
+      <li><b>Unshield + payout:</b> the burned amount is made publicly decryptable and the payout event carries the decrypted amount.</li>
       <li><b>Confidential transfer:</b> sender, receiver and time are visible; the amount is encrypted.</li>
     </ul>
     <p class="small">Sources: <a href="https://cofhe-docs.fhenix.zone/fhe-library/confidential-contracts/dual-mode/shield-unshield">Shield and unshield</a>, <a href="https://cofhe-docs.fhenix.zone/fhe-library/confidential-contracts/dual-mode/best-practices">best practices</a>, <a href="https://cofhe-docs.fhenix.zone/cofhe/fhe-library/confidential-contracts/fherc20/fherc20-wrapper">FHERC20 wrapper</a>.</p>
@@ -60,10 +62,10 @@
   <section class="card">
     <h2>Method and data gaps</h2>
     <div id="method"></div>
-    <p>Spotted a wrong token, a missed contract or a bad number? <a href="https://github.com/suhasdasari/shield-leak/issues">Claim or correct it on GitHub Issues</a>.</p>
+    <p>Spotted a wrong token, a missed contract or a bad number? <a href="https://github.com/suhasdasari/shield-leak/issues">Report or correct it on GitHub Issues</a>.</p>
   </section>
 
-  <p class="nfa"><b>Not financial advice.</b> Shield Leak is an aggregate measurement and self-check tool. It does not label addresses with identities and makes no claim about who controls any address.</p>
+  <p class="nfa"><b>Not financial advice.</b> Shield Leak is an aggregate measurement and self-check tool. It does not label addresses with identities and makes no assertion about who controls any address.</p>
 </main>
 <footer>
   <div class="wrap">Built by <a href="https://x.com/SatoshiDropsHQ">Satoshi Drops 🪂 @SatoshiDropsHQ</a></div>
