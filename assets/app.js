@@ -32,8 +32,8 @@
   const gen = new Date(D.generated_at);
   $('headline').innerHTML = [
     [addrs.size, 'distinct addresses ever touching a Fhenix confidential token (both chains)'],
-    [cnt('shield') + ' / ' + cnt('claim'), 'public shields / public claims indexed'],
-    [links.length ? Math.round(100 * linked.length / links.length) + '%' : 'n/a', `of claims (${linked.length} of ${links.length}) exactly match an earlier shield amount on the same token`],
+    [cnt('shield') + ' / ' + cnt('claim'), 'public shields / public payouts indexed'],
+    [links.length ? Math.round(100 * linked.length / links.length) + '%' : 'n/a', `of payouts (${linked.length} of ${links.length}) exactly match an earlier shield amount on the same token`],
     [cnt('transfer'), 'confidential transfers (amount hidden, both parties visible)'],
   ].map(([b, s]) => `<div class="stat"><b>${b}</b><span>${s}</span></div>`).join('');
 
@@ -50,9 +50,9 @@
 
   // ---- link finder ----
   const sym = (e) => e.symbol + ' (' + CH[e.chain] + ')';
-  $('links').innerHTML = linked.length ? `<p>${uniq.length} unique-amount matches · ${selfRT.length} claims paid to an address that had itself shielded on that token earlier.</p><div class="scroll"><table><tr><th>Token</th><th>Claim tx</th><th>Claimed to</th><th class="n">Amount</th><th>Earlier shield(s) of that exact amount</th><th>Flag</th></tr>` +
+  $('links').innerHTML = linked.length ? `<p>${uniq.length} unique-amount matches · ${selfRT.length} payouts to an address that had itself shielded on that token earlier.</p><div class="scroll"><table><tr><th>Token</th><th>Claim tx</th><th>Claimed to</th><th class="n">Amount</th><th>Earlier shield(s) of that exact amount</th><th>Flag</th></tr>` +
     linked.map(l => `<tr><td>${sym(l.c)}</td><td>${tLink(l.c.chain, l.c.tx)}</td><td>${aLink(l.c.chain, l.c.address)}</td><td class="n">${fmtAmt(l.c.amount)}</td><td>${l.prior.map(s => tLink(s.chain, s.tx) + ' by ' + aLink(s.chain, s.address)).join('<br>')}</td><td>${l.unique ? '<span class="flag">unique amount</span>' : l.shielders.length + ' shielders'}${l.self ? ' · same address' : ''}</td></tr>`).join('') + '</table></div>'
-    : '<p class="muted">No claim yet matches an earlier shield amount.</p>';
+    : '<p class="muted">No payout yet matches an earlier shield amount.</p>';
 
   // ---- exit planner ----
   $('exit').innerHTML = toks.filter(t => t.stats.shields).map(t => {
@@ -67,9 +67,9 @@
   $('method').innerHTML = `<ul>
 <li>Indexed with public RPCs (Arbitrum: arb1.arbitrum.io; Ethereum: Blockscout API plus public RPC) from Ethereum block ${D.chains.ethereum.scan_from_block.toLocaleString()} and Arbitrum block ${D.chains.arbitrum.scan_from_block.toLocaleString()} to the snapshot heads above. Refreshed by a GitHub Action.</li>
 <li>Shield = <code>ConfidentialTransfer</code> from the zero address; amount read from the underlying token's <code>Transfer</code> into the wrapper in the same tx (ETH wrappers: tx value), floored to 6-decimal precision.</li>
-<li>Unshield = <code>ConfidentialTransfer</code> to the zero address. Claim = the wrapper's claim event, which carries the decrypted amount. Its event signature is not published; meaning is inferred from the tx pattern in Fhenix docs.</li>
-<li><b>Gaps:</b> no USD pricing (amounts are token units); dual-mode ERC20Confidential tokens (e.g. fUSD, FIX) were not found on mainnet in this window, only FHERC20-style wrappers; contracts that never emitted <code>ConfidentialTransfer</code> are missed; the address check covers only this snapshot, not live chain state; pending unshield claims and encrypted balances cannot be read; ${other.length} other ERC-7984 confidential token contracts (mostly Zama-style "Confidential …" wrappers) were seen and excluded.</li>
-<li>Bounds shown for an address are "shielded in minus claimed out" from public events. Confidential transfers in or out change the real balance by hidden amounts, so the bound is flagged as loose whenever they exist.</li></ul>`;
+<li>Unshield = <code>ConfidentialTransfer</code> to the zero address. Payout = the wrapper's payout event, which carries the decrypted amount. Its event signature is not published; meaning is inferred from the tx pattern in Fhenix docs.</li>
+<li><b>Gaps:</b> no USD pricing (amounts are token units); dual-mode ERC20Confidential tokens (e.g. fUSD, FIX) were not found on mainnet in this window, only FHERC20-style wrappers; contracts that never emitted <code>ConfidentialTransfer</code> are missed; the address check covers only this snapshot, not live chain state; pending unshield payouts and encrypted balances cannot be read; ${other.length} other ERC-7984 confidential token contracts (mostly Zama-style "Confidential …" wrappers) were seen and excluded.</li>
+<li>Bounds shown for an address are "shielded in minus paid out" from public events. Confidential transfers in or out change the real balance by hidden amounts, so the bound is flagged as loose whenever they exist.</li></ul>`;
 
   // ---- checker ----
   function check(q) {
@@ -96,9 +96,9 @@
       const myLinks = links.filter(l => l.c.address === q && tkey(l.c) === tkey(t) && l.prior.length);
       const counter = [...new Set(list.filter(e => e.kind === 'transfer').map(e => e.address === q ? e.counterparty : e.address))];
       return `<div class="box"><b>${sym(t)}</b> ${aLink(t.chain, t.token)}
-<p>An observer can see: <b>${fmtAmt(sIn)}</b> shielded in, <b>${fmtAmt(cOut)}</b> claimed out, so the public estimate of the remaining encrypted balance is <b>${fmtAmt(sIn - cOut)}</b>${tIn + tOut ? ` <span class="flag">(loose: ${tIn} confidential transfer(s) in, ${tOut} out with hidden amounts)</span>` : ' (no confidential transfers, so this estimate is exact unless a claim is pending)'}.${pend > 0 ? ` ${pend} unshield(s) not yet claimed.` : ''}</p>
+<p>An observer can see: <b>${fmtAmt(sIn)}</b> shielded in, <b>${fmtAmt(cOut)}</b> paid out, so the public estimate of the remaining encrypted balance is <b>${fmtAmt(sIn - cOut)}</b>${tIn + tOut ? ` <span class="flag">(loose: ${tIn} confidential transfer(s) in, ${tOut} out with hidden amounts)</span>` : ' (no confidential transfers, so this estimate is exact unless a claim is pending)'}.${pend > 0 ? ` ${pend} unshield(s) not yet claimed.` : ''}</p>
 ${counter.length ? `<p>Visible counterparties: ${counter.map(c => aLink(t.chain, c)).join(', ')}</p>` : ''}
-${myLinks.length ? `<p class="flag">${myLinks.length} claim(s) to this address exactly match an earlier shield amount on this token${myLinks.some(l => l.unique) ? ', at least one from a single shielder' : ''}.</p>` : ''}
+${myLinks.length ? `<p class="flag">${myLinks.length} payout(s) to this address exactly match an earlier shield amount on this token${myLinks.some(l => l.unique) ? ', at least one from a single shielder' : ''}.</p>` : ''}
 <table><tr><th>Time</th><th>Event</th><th class="n">Amount</th><th>Tx</th></tr>${list.map(e => `<tr><td>${fmtT(e.time)}</td><td class="k-${e.kind}">${label(e, q)}</td><td class="n">${e.kind === 'shield' || e.kind === 'claim' ? fmtAmt(e.amount) : (e.kind === 'unshield' ? 'revealed at claim' : 'hidden')}</td><td>${tLink(e.chain, e.tx)}</td></tr>`).join('')}</table></div>`;
     }).join('');
   }
@@ -109,8 +109,8 @@ ${myLinks.length ? `<p class="flag">${myLinks.length} claim(s) to this address e
   function describe(e) {
     const base = `${sym(e)} · ${fmtT(e.time)} · `;
     if (e.kind === 'shield') return base + `shield by ${aLink(e.chain, e.address)}, public amount ${fmtAmt(e.amount)}`;
-    if (e.kind === 'claim') return base + `claim paid to ${aLink(e.chain, e.address)}, public amount ${fmtAmt(e.amount)}`;
-    if (e.kind === 'unshield') return base + `unshield request by ${aLink(e.chain, e.address)}; amount revealed when claimed`;
+    if (e.kind === 'claim') return base + `payout to ${aLink(e.chain, e.address)}, public amount ${fmtAmt(e.amount)}`;
+    if (e.kind === 'unshield') return base + `unshield request by ${aLink(e.chain, e.address)}; amount revealed when paid out`;
     return base + `confidential transfer ${aLink(e.chain, e.address)} → ${aLink(e.chain, e.counterparty)}; amount hidden, parties and time public`;
   }
   $('check').addEventListener('submit', (ev) => { ev.preventDefault(); check($('q').value); history.replaceState(null, '', '#' + $('q').value.trim()); });
