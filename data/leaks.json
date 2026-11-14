@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-14T18:19:30Z",
+ "generated_at": "2026-11-14T22:38:09Z",
  "chains": {
   "ethereum": {
    "chain_id": 1,
@@ -10,8 +10,8 @@
   },
   "arbitrum": {
    "chain_id": 42161,
-   "head_block": 524231620,
-   "head_time": 1794680642,
+   "head_block": 524287698,
+   "head_time": 1794696160,
    "scan_from_block": 512000000,
    "explorer": "https://arbiscan.io"
   }
