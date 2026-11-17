@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-11-16T22:22:05Z",
+ "generated_at": "2026-11-17T08:10:20Z",
  "chains": {
   "ethereum": {
    "chain_id": 1,
@@ -10,8 +10,8 @@
   },
   "arbitrum": {
    "chain_id": 42161,
-   "head_block": 524870949,
-   "head_time": 1794867916,
+   "head_block": 524981250,
+   "head_time": 1794903223,
    "scan_from_block": 512000000,
    "explorer": "https://arbiscan.io"
   }
@@ -268,17 +268,17 @@
    "underlying_decimals": 18,
    "rate": 1000000000000,
    "stats": {
-    "shields": 49,
+    "shields": 50,
     "unshields": 38,
     "claims": 38,
     "transfers": 5,
     "unique_shielders": 32,
     "unique_addresses": 34,
-    "total_shielded": 38077664,
+    "total_shielded": 38823460,
     "total_claimed": 30583191,
     "claims_matching_single_shielder_amount": 28,
     "first_event": 1792476112,
-    "last_event": 1794798028
+    "last_event": 1794880758
    }
   },
   {
@@ -312,17 +312,17 @@
    "underlying_decimals": 18,
    "rate": 1000000000000,
    "stats": {
-    "shields": 56,
+    "shields": 57,
     "unshields": 37,
     "claims": 36,
     "transfers": 7,
     "unique_shielders": 46,
     "unique_addresses": 51,
-    "total_shielded": 17931466177,
+    "total_shielded": 17954744214,
     "total_claimed": 17291030343,
     "claims_matching_single_shielder_amount": 30,
     "first_event": 1792591202,
-    "last_event": 1794793031
+    "last_event": 1794879662
    }
   },
   {
@@ -334,17 +334,17 @@
    "underlying_decimals": 18,
    "rate": 1000000000000,
    "stats": {
-    "shields": 871,
-    "unshields": 761,
-    "claims": 749,
+    "shields": 880,
+    "unshields": 766,
+    "claims": 754,
     "transfers": 42,
-    "unique_shielders": 202,
-    "unique_addresses": 218,
-    "total_shielded": 490826705,
-    "total_claimed": 492115412,
-    "claims_matching_single_shielder_amount": 334,
+    "unique_shielders": 204,
+    "unique_addresses": 220,
+    "total_shielded": 490870190,
+    "total_claimed": 494211595,
+    "claims_matching_single_shielder_amount": 337,
     "first_event": 1792504169,
-    "last_event": 1794857989
+    "last_event": 1794900287
    }
   },
   {
@@ -356,17 +356,17 @@
    "underlying_decimals": 18,
    "rate": 1000000000000,
    "stats": {
-    "shields": 28,
+    "shields": 30,
     "unshields": 23,
     "claims": 23,
     "transfers": 2,
-    "unique_shielders": 26,
-    "unique_addresses": 27,
-    "total_shielded": 17272793,
+    "unique_shielders": 28,
+    "unique_addresses": 29,
+    "total_shielded": 18449864,
     "total_claimed": 15678920,
     "claims_matching_single_shielder_amount": 22,
     "first_event": 1792660317,
-    "last_event": 1794533473
+    "last_event": 1794890807
    }
   },
   {
@@ -401,16 +401,16 @@
    "rate": 1,
    "stats": {
     "shields": 57,
-    "unshields": 42,
-    "claims": 42,
+    "unshields": 43,
+    "claims": 43,
     "transfers": 11,
     "unique_shielders": 41,
     "unique_addresses": 45,
     "total_shielded": 311864268,
-    "total_claimed": 242052589,
-    "claims_matching_single_shielder_amount": 27,
+    "total_claimed": 247280394,
+    "claims_matching_single_shielder_amount": 28,
     "first_event": 1792599440,
-    "last_event": 1794558076
+    "last_event": 1794882932
    }
   },
   {
@@ -532,17 +532,17 @@
    "underlying_decimals": 6,
    "rate": 1,
    "stats": {
-    "shields": 420,
-    "unshields": 376,
-    "claims": 375,
+    "shields": 422,
+    "unshields": 377,
+    "claims": 376,
     "transfers": 809,
-    "unique_shielders": 148,
-    "unique_addresses": 165,
-    "total_shielded": 36892740023,
-    "total_claimed": 34114395871,
-    "claims_matching_single_shielder_amount": 296,
+    "unique_shielders": 150,
+    "unique_addresses": 167,
+    "total_shielded": 36904529023,
+    "total_claimed": 34118934042,
+    "claims_matching_single_shielder_amount": 297,
     "first_event": 1792455362,
-    "last_event": 1794847070
+    "last_event": 1794898510
    }
   },
   {
@@ -63811,6 +63811,361 @@
    "address": "0x1627015000157f831156146a3a94e1bb13f7455c",
    "handle": "0xa691c3920f072320ae155473de175c31a3e151fbe9a1c43f2514c99c32b30500",
    "amount": 240
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524890806,
+   "time": 1794874185,
+   "tx": "0xdc0a0af17a7812ecce9545e12b2ec62af642f572354716a26ce10daad75532ba",
+   "log": 14,
+   "kind": "shield",
+   "address": "0x9a8b92de12d95a8d0dd84f829d6e21eca0ab9583",
+   "amount": 100
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524890845,
+   "time": 1794874197,
+   "tx": "0xd273d0bb7636c7909826399bacf448a45de3a7544a653b5841c3731656a9e3c6",
+   "log": 8,
+   "kind": "unshield",
+   "address": "0x9a8b92de12d95a8d0dd84f829d6e21eca0ab9583",
+   "handle": "0x93b5e3cc57c6c99daea3155ac705f102a42818b6588c32c04f13b887a85e0500"
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524890872,
+   "time": 1794874204,
+   "tx": "0x4b0e589a138a62f13a6739780c6b294808062f29be7bf064283c0a5909f13510",
+   "log": 4,
+   "kind": "claim",
+   "address": "0x9a8b92de12d95a8d0dd84f829d6e21eca0ab9583",
+   "handle": "0x93b5e3cc57c6c99daea3155ac705f102a42818b6588c32c04f13b887a85e0500",
+   "amount": 100
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524892381,
+   "time": 1794874673,
+   "tx": "0x9f373d559ffb35d0719d3eb1af664eeb8027982fcf992d87b62e3d698c4a51b9",
+   "log": 8,
+   "kind": "unshield",
+   "address": "0x760fbe908852d27398ebf4dc435456787227e30a",
+   "handle": "0xdce427dc66fe10965eafe667bd43d444dd33b0bd7966c7ade1ca5145271a0500"
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524892514,
+   "time": 1794874713,
+   "tx": "0x23ca266b6897b1f354012c6fe3d13f688aa6b53a19f925841c1d3d62ec4d1961",
+   "log": 1,
+   "kind": "claim",
+   "address": "0x760fbe908852d27398ebf4dc435456787227e30a",
+   "handle": "0xdce427dc66fe10965eafe667bd43d444dd33b0bd7966c7ade1ca5145271a0500",
+   "amount": 2081064
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524902337,
+   "time": 1794877768,
+   "tx": "0xa935e614aeb024231bb397992cb3d9b01cb39bf951fde589f1fa360591e332fa",
+   "log": 8,
+   "kind": "shield",
+   "address": "0x2dbbb3158e91a3da88ab495bdd8362e077a3c827",
+   "amount": 5137
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524906938,
+   "time": 1794879209,
+   "tx": "0x27a05b120f5d82f09a7e0ef1a391cda3096aacef4e714da0f03cdbaa3ce1eacf",
+   "log": 8,
+   "kind": "shield",
+   "address": "0xcf7adc53bf222b727827a18323cc8f4cc95d2f22",
+   "amount": 11296
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1abd9225f91021f3794c722e1a197b5c7ec3ecf6",
+   "symbol": "fARB",
+   "block": 524908343,
+   "time": 1794879662,
+   "tx": "0xea84e81694625afe375a4a6a7a148d9e7f525332a6048264db67f2ec46bd7d05",
+   "log": 10,
+   "kind": "shield",
+   "address": "0xb0e7f5c47ed32b171daed0a53a5ac9d687323134",
+   "amount": 23278037
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524908432,
+   "time": 1794879690,
+   "tx": "0x7d2e39f72b2ed0f86792bfa60af4995390ea2ed24e3e9ab879dec0b014d699a6",
+   "log": 11,
+   "kind": "shield",
+   "address": "0xb0e7f5c47ed32b171daed0a53a5ac9d687323134",
+   "amount": 7547
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524910917,
+   "time": 1794880453,
+   "tx": "0xa58d8524d86f619b65eb1906094c66923fef4978331b15b39d69eb1f355622f3",
+   "log": 15,
+   "kind": "unshield",
+   "address": "0xd5aebc044c31ff32eb49dc691a8d82bfae2c96a1",
+   "handle": "0xdb0c9a560ec5ef6ad352a88812f5d50e9507d17cf970908df9186dcdf6f30500"
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524911062,
+   "time": 1794880498,
+   "tx": "0xe320495f4e819231ee3d22e03837855a3bb951b22f63dff694d01f47757af7f8",
+   "log": 1,
+   "kind": "claim",
+   "address": "0xd5aebc044c31ff32eb49dc691a8d82bfae2c96a1",
+   "handle": "0xdb0c9a560ec5ef6ad352a88812f5d50e9507d17cf970908df9186dcdf6f30500",
+   "amount": 2700
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1242bf2f6a178232fa83419e95c7ad68ed9bc922",
+   "symbol": "fUNI",
+   "block": 524911902,
+   "time": 1794880758,
+   "tx": "0xe9615285539fd877862723b7a772db9525567d735ac5b37abe3449ea8ab7ce09",
+   "log": 10,
+   "kind": "shield",
+   "address": "0xd5aebc044c31ff32eb49dc691a8d82bfae2c96a1",
+   "amount": 745796
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524911951,
+   "time": 1794880772,
+   "tx": "0x6e45df147ea6d88462d501395d94aaf0a667f3406b24c0712d5c9d24736bb47a",
+   "log": 30,
+   "kind": "shield",
+   "address": "0xc08afe44ea27ef6e08c7d3c3856482951e8ec1ef",
+   "amount": 123
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524914018,
+   "time": 1794881376,
+   "tx": "0xb6a64673298c7b705e3c1a893649eb24dc43bef9f7e9b085921a0d412ff79471",
+   "log": 9,
+   "kind": "shield",
+   "address": "0xc08afe44ea27ef6e08c7d3c3856482951e8ec1ef",
+   "amount": 60
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0xaaf2bf3beb6a3660acd3d3710c64ba255455275b",
+   "symbol": "fUSDC",
+   "block": 524914128,
+   "time": 1794881409,
+   "tx": "0xa80bde97929bc96ffdda1ffa3cdaa1adc93bbe92a80cb938116b3fcb302dce4c",
+   "log": 10,
+   "kind": "shield",
+   "address": "0xc08afe44ea27ef6e08c7d3c3856482951e8ec1ef",
+   "amount": 5789000
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x706ff53dac4708578b7c228760954fe5b56e41ea",
+   "symbol": "fUSDT",
+   "block": 524918856,
+   "time": 1794882912,
+   "tx": "0x502c76c72defe7a5e3ef180857801580f9c36eed25e5bf2172f4b6ff979c7215",
+   "log": 14,
+   "kind": "unshield",
+   "address": "0xd299ab46395818efe24451a3401b52389054ca59",
+   "handle": "0x23f0069889db4cb716ca10ffafaa2e0ec08395152df704c85c7e6eb8167f0500"
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x706ff53dac4708578b7c228760954fe5b56e41ea",
+   "symbol": "fUSDT",
+   "block": 524918924,
+   "time": 1794882932,
+   "tx": "0x25860b31a28720f2e246f45122fc562ca9ed21536a983f0d896c4e083269fcf4",
+   "log": 3,
+   "kind": "claim",
+   "address": "0xd299ab46395818efe24451a3401b52389054ca59",
+   "handle": "0x23f0069889db4cb716ca10ffafaa2e0ec08395152df704c85c7e6eb8167f0500",
+   "amount": 5227805
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x2801e7e3727596a8b495a0a2aa823e2cd72bc99b",
+   "symbol": "fLINK",
+   "block": 524919346,
+   "time": 1794883065,
+   "tx": "0x6bdf08251f04df12a39429a73cf905da650646385afa9615cd91a4a4197f2063",
+   "log": 11,
+   "kind": "shield",
+   "address": "0xd299ab46395818efe24451a3401b52389054ca59",
+   "amount": 584079
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524937057,
+   "time": 1794888715,
+   "tx": "0xf8aae909e0980ec8191d1823f505fe7641838c503dcd1df560f0eea1a5388701",
+   "log": 17,
+   "kind": "unshield",
+   "address": "0xc32a34d83cc082193d2f13a209f3ba41e7994f05",
+   "handle": "0x10c0088dc1479e3f47a41cc19b356665fcf9b654aaa7c3be70fb101607990500"
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524937101,
+   "time": 1794888728,
+   "tx": "0x8661b949da8844486721bde7d626c34eab843a2163a0ea4ad9e348c2067e69c1",
+   "log": 0,
+   "kind": "claim",
+   "address": "0xc32a34d83cc082193d2f13a209f3ba41e7994f05",
+   "handle": "0x10c0088dc1479e3f47a41cc19b356665fcf9b654aaa7c3be70fb101607990500",
+   "amount": 12000
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524937860,
+   "time": 1794888981,
+   "tx": "0xb7a2d9488e8d29b8b97ba465f77593fe7dba4511c3726a58bf68c5465463230c",
+   "log": 9,
+   "kind": "shield",
+   "address": "0x66d9f52c4d42b86588ae8863a0f7ebf578482fff",
+   "amount": 155
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0xaaf2bf3beb6a3660acd3d3710c64ba255455275b",
+   "symbol": "fUSDC",
+   "block": 524937969,
+   "time": 1794889020,
+   "tx": "0x7efc6243ac768844417156480f4d1394a72430f8ca0fa02c53809d4da2c05d9b",
+   "log": 458,
+   "kind": "shield",
+   "address": "0x66d9f52c4d42b86588ae8863a0f7ebf578482fff",
+   "amount": 6000000
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524941239,
+   "time": 1794890099,
+   "tx": "0x0291389f13d34113d45de2cb7b98dc169f866920cfad86a05e8969e2b8b3fec1",
+   "log": 8,
+   "kind": "shield",
+   "address": "0xc32a34d83cc082193d2f13a209f3ba41e7994f05",
+   "amount": 12067
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x2801e7e3727596a8b495a0a2aa823e2cd72bc99b",
+   "symbol": "fLINK",
+   "block": 524943376,
+   "time": 1794890807,
+   "tx": "0x3b2f9ab2ee0a2d0b04b982a04f39a23afd3cb5abaaf71bfe7d58631a44fc2c1b",
+   "log": 12,
+   "kind": "shield",
+   "address": "0xe55aa789724fd800c3eccee7bbbaa191565a9ada",
+   "amount": 592992
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524961911,
+   "time": 1794897066,
+   "tx": "0x832c62983f5676b86bbab4d62bf44339d0c2fbccf11c14f9043786ccbad666dc",
+   "log": 108,
+   "kind": "shield",
+   "address": "0x257e075c1f1f6b30492521b9f1ff092a45999dc7",
+   "amount": 7000
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0xaaf2bf3beb6a3660acd3d3710c64ba255455275b",
+   "symbol": "fUSDC",
+   "block": 524966418,
+   "time": 1794898430,
+   "tx": "0xc632d7f716321b4697ed5d968c7245873ee6585cc6ab19c792cb7f7e07edcd68",
+   "log": 8,
+   "kind": "unshield",
+   "address": "0x47cb209af72a7fea2f2f49a3edcea61058ec979e",
+   "handle": "0x914b87dbc4e303cc693c26894d12cee85bf93e1a82e53f9b8949861803150500"
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0xaaf2bf3beb6a3660acd3d3710c64ba255455275b",
+   "symbol": "fUSDC",
+   "block": 524966670,
+   "time": 1794898510,
+   "tx": "0xb1b0f6c7adbe8069b4a1a7aa870ff09ee504d8a7bdaffeaa76e84f235fd6ebfd",
+   "log": 7,
+   "kind": "claim",
+   "address": "0x47cb209af72a7fea2f2f49a3edcea61058ec979e",
+   "handle": "0x914b87dbc4e303cc693c26894d12cee85bf93e1a82e53f9b8949861803150500",
+   "amount": 4538171
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524972151,
+   "time": 1794900277,
+   "tx": "0xd6ec7d41e3bd123b2c219412c1bd6d7fc9adc983c780f9c853cac53201919cff",
+   "log": 8,
+   "kind": "unshield",
+   "address": "0xf020f91f0491f4d8bef0db17d2adabb200fb162f",
+   "handle": "0x52dfdeca4559064b96c308cc0c24b02ff56c2932d4bd54ec02d549cd541d0500"
+  },
+  {
+   "chain": "arbitrum",
+   "token": "0x1cc41c77b6cf8442d31b4c8bc7499715cf1949d3",
+   "symbol": "fETH",
+   "block": 524972182,
+   "time": 1794900287,
+   "tx": "0xf59186383f1584c2733aa19e8cf2d9edd1d543d42061f7b0da13b591938f136c",
+   "log": 2,
+   "kind": "claim",
+   "address": "0xf020f91f0491f4d8bef0db17d2adabb200fb162f",
+   "handle": "0x52dfdeca4559064b96c308cc0c24b02ff56c2932d4bd54ec02d549cd541d0500",
+   "amount": 319
   }
  ],
  "other_erc7984": [
